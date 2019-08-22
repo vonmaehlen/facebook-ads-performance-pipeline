@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='facebook-ads-performance-pipeline',
-    version='1.0.0',
+    version='1.0.1',
     description="A data integration pipeline that imports downloaded Facebook Ads performance data into a data warehouse",
 
     install_requires=[
