@@ -7,6 +7,7 @@ from data_integration.commands.sql import ExecuteSQL
 from data_integration.parallel_tasks.files import ReadMode, ParallelReadSqlite
 from data_integration.parallel_tasks.sql import ParallelExecuteSQL
 from data_integration.pipelines import Pipeline, Task
+from data_integration.config import default_db_alias
 
 pipeline = Pipeline(
     id="facebook",
@@ -73,7 +74,7 @@ pipeline.add(
 
 
 def index_ad_parameters():
-    with mara_db.postgresql.postgres_cursor_context('mdwh-etl') as cursor:
+    with mara_db.postgresql.postgres_cursor_context(default_db_alias()) as cursor:
         cursor.execute('''select util.get_columns('fb_dim_next', 'ad', '%_name');''')
         return cursor.fetchall()
 
@@ -98,7 +99,7 @@ pipeline.add(
 
 
 def index_ad_performance_parameters():
-    with mara_db.postgresql.postgres_cursor_context('mdwh-etl') as cursor:
+    with mara_db.postgresql.postgres_cursor_context(default_db_alias()) as cursor:
         cursor.execute('''SELECT util.get_columns('fb_dim_next', 'ad_performance', '%_fk');''')
         return cursor.fetchall()
 
