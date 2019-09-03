@@ -31,7 +31,8 @@ CREATE OR REPLACE FUNCTION fb_data.upsert_ad_performance()
 DELETE FROM fb_data.ad_performance
 USING fb_data.ad_performance_upsert
 WHERE ad_performance_upsert.date = ad_performance.date
-      AND ad_performance_upsert.ad_id = ad_performance.ad_id;
+      AND ad_performance_upsert.ad_id = ad_performance.ad_id
+      AND ad_performance_upsert.device = ad_performance.device;
 
 -- copy new data in
 INSERT INTO fb_data.ad_performance
