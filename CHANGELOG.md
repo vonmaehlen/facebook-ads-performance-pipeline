@@ -1,10 +1,10 @@
 # Changelog
 
-## 1.0.1 (2019-08-22)
+## 1.0.1 (2019-03-09)
 
 * Fix dependency name change
 * Use default DB connection for pipeline instead of hardcoded one. Use `patch(data_integration.config.default_db_alias)(lambda: '<YOUR ETL alias here>')` in your local_setup.py to configure if not done so already.
-
+* Fix upsert query in ad-performance table
 
 
 
