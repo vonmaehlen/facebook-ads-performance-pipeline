@@ -8,13 +8,13 @@ setup(
     install_requires=[
         'facebook-ads-performance-downloader>=2.0.0',
         'mara-etl-tools>=1.1.0',
-        'data-integration>=1.3.0',
+        'mara-pipelines>=3.1.0',
     ],
 
     dependency_links=[
         'git+https://github.com/mara/facebook-ads-performance-downloader.git@2.0.0#egg=facebook-ads-performance-downloader-2.0.0',
         'git+https://github.com/mara/mara-etl-tools.git@1.1.0#egg=mara-etl-tools-1.1.0',
-        'git+https://github.com/mara/data-integration.git@1.3.0#egg=data-integration-1.3.0'
+        'git+https://github.com/mara/mara-pipelines.git@3.1.1#egg=mara-pipelines-3.1.1'
     ],
 
     packages=find_packages(),
