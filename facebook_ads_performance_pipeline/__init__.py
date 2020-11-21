@@ -43,7 +43,7 @@ pipeline.add(
         file_pattern="*/*/*/facebook/ad-performance-*-{}.sqlite3".format(config.input_file_version()),
         read_mode=ReadMode.ONLY_CHANGED,
         sql_file_name='read_ad_performance.sql',
-        target_table="fb_data.ad_performance",
+        target_table="fb_data.ad_performance_upsert",
         date_regex="^(?P<year>\d{4})\/(?P<month>\d{2})\/(?P<day>\d{2})/",
         file_dependencies=['create_ad_performance_data_table.sql'],
         commands_before=[
