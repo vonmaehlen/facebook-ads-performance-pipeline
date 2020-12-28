@@ -8,8 +8,24 @@ CREATE TABLE fb_data.ad_performance (
   impressions        DOUBLE PRECISION NOT NULL,
   inline_link_clicks DOUBLE PRECISION,
   spend              DOUBLE PRECISION,
+
   conversions        DOUBLE PRECISION,
-  conversion_value   DOUBLE PRECISION
+  conversion_value   DOUBLE PRECISION,
+
+  add_to_carts       DOUBLE PRECISION,
+  add_to_cart_value  DOUBLE PRECISION,
+
+  initiate_checkouts DOUBLE PRECISION,
+  initiate_checkout_value DOUBLE PRECISION,
+
+  purchases          DOUBLE PRECISION,
+  purchase_value     DOUBLE PRECISION,
+
+  leads              DOUBLE PRECISION,
+  lead_value         DOUBLE PRECISION,
+
+  registrations      DOUBLE PRECISION,
+  registration_value DOUBLE PRECISION
 );
 
 -- needed for upserting
